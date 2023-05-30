@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "img": "https://fastgear.themerex.net/wp-content/uploads/2016/11/team8-370x493.jpg",
+    "name": "Drake Jacson",
+    "work": "Courier"
+  },
+  {
+    "id": 2,
+    "img": "https://fastgear.themerex.net/wp-content/uploads/2016/11/team7-370x493.jpg",
+    "name": "Frank Nelson",
+    "work": "Messenger"
+  },
+  {
+    "id": 3,
+    "img": "https://fastgear.themerex.net/wp-content/uploads/2016/11/team5-370x493.jpg",
+    "name": "Will Thomas",
+    "work": "Byclycle Mechanic"
+  }
+]

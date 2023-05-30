@@ -1,0 +1,50 @@
+[
+  {
+    "id": "5",
+    "title": "Courier Services",
+    "rating": 5,
+    "price": 10,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos quibusdam odit natus aliquam debitis consequuntur repudiandae officia adipisci ad quos recusandae alias voluptatum autem laboriosam voluptas, est perspiciatis voluptatibus veritatis! Quisquam eveniet rem optio excepturi praesentium nemo officia ratione, quod, illum culpa, molestiae exercitationem nam provident deleniti. Vel reiciendis facere voluptates soluta necessitatibus quisquam a id quaerat veritatis! Ut asperiores fugiat incidunt sapiente dolores neque perferendis qui unde eaque dolorem, exercitationem laborum, necessitatibus nesciunt ex quas quidem vitae sit nisi commodi accusamus eum adipisci. Tenetur vitae necessitatibus sapiente aperiam repellendus temporibus! Similique laborum facere tenetur aperiam pariatur unde in?",
+    "img": "https://i.ibb.co/1L1kzVL/jordan-brierley-N1-Nv-Joq-Mg9g-unsplash.jpg"
+  },
+  {
+    "id": "1",
+    "title": "Business Services",
+    "rating": "5",
+    "price": 25,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos quibusdam odit natus aliquam debitis consequuntur repudiandae officia adipisci ad quos recusandae alias voluptatum autem laboriosam voluptas, est perspiciatis voluptatibus veritatis! Quisquam eveniet rem optio excepturi praesentium nemo officia ratione, quod, illum culpa, molestiae exercitationem nam provident deleniti. Vel reiciendis facere voluptates soluta necessitatibus quisquam a id quaerat veritatis! Ut asperiores fugiat incidunt sapiente dolores neque perferendis qui unde eaque dolorem, exercitationem laborum, necessitatibus nesciunt ex quas quidem vitae sit nisi commodi accusamus eum adipisci. Tenetur vitae necessitatibus sapiente aperiam repellendus temporibus! Similique laborum facere tenetur aperiam pariatur unde in?",
+    "img": "https://i.ibb.co/1rDZCFF/alexander-simonsen-p-PDze-ITv26o-unsplash.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Medicine Delivery",
+    "rating": "4.5",
+    "price": 17,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos quibusdam odit natus aliquam debitis consequuntur repudiandae officia adipisci ad quos recusandae alias voluptatum autem laboriosam voluptas, est perspiciatis voluptatibus veritatis! Quisquam eveniet rem optio excepturi praesentium nemo officia ratione, quod, illum culpa, molestiae exercitationem nam provident deleniti. Vel reiciendis facere voluptates soluta necessitatibus quisquam a id quaerat veritatis! Ut asperiores fugiat incidunt sapiente dolores neque perferendis qui unde eaque dolorem, exercitationem laborum, necessitatibus nesciunt ex quas quidem vitae sit nisi commodi accusamus eum adipisci. Tenetur vitae necessitatibus sapiente aperiam repellendus temporibus! Similique laborum facere tenetur aperiam pariatur unde in?",
+    "img": "https://5.imimg.com/data5/SELLER/Default/2021/12/FP/OR/WW/31411112/courier-services-for-dubai-500x500.jpeg"
+  },
+  {
+    "id": "2",
+    "title": "Shop Delivery",
+    "rating": "4",
+    "price": 20,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos quibusdam odit natus aliquam debitis consequuntur repudiandae officia adipisci ad quos recusandae alias voluptatum autem laboriosam voluptas, est perspiciatis voluptatibus veritatis! Quisquam eveniet rem optio excepturi praesentium nemo officia ratione, quod, illum culpa, molestiae exercitationem nam provident deleniti. Vel reiciendis facere voluptates soluta necessitatibus quisquam a id quaerat veritatis! Ut asperiores fugiat incidunt sapiente dolores neque perferendis qui unde eaque dolorem, exercitationem laborum, necessitatibus nesciunt ex quas quidem vitae sit nisi commodi accusamus eum adipisci. Tenetur vitae necessitatibus sapiente aperiam repellendus temporibus! Similique laborum facere tenetur aperiam pariatur unde in?",
+    "img": "https://i.ibb.co/sQ7pqcj/alexander-simonsen-0-Sd09h2-Kbso-unsplash.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Personal Services",
+    "rating": "4.5",
+    "price": 15,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos quibusdam odit natus aliquam debitis consequuntur repudiandae officia adipisci ad quos recusandae alias voluptatum autem laboriosam voluptas, est perspiciatis voluptatibus veritatis! Quisquam eveniet rem optio excepturi praesentium nemo officia ratione, quod, illum culpa, molestiae exercitationem nam provident deleniti. Vel reiciendis facere voluptates soluta necessitatibus quisquam a id quaerat veritatis! Ut asperiores fugiat incidunt sapiente dolores neque perferendis qui unde eaque dolorem, exercitationem laborum, necessitatibus nesciunt ex quas quidem vitae sit nisi commodi accusamus eum adipisci. Tenetur vitae necessitatibus sapiente aperiam repellendus temporibus! Similique laborum facere tenetur aperiam pariatur unde in?",
+    "img": "https://i.ibb.co/25rCXCw/handy-wicaksono-briz-G9k-R6q-I-unsplash.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Food Delivery",
+    "rating": "4",
+    "price": 12,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos quibusdam odit natus aliquam debitis consequuntur repudiandae officia adipisci ad quos recusandae alias voluptatum autem laboriosam voluptas, est perspiciatis voluptatibus veritatis! Quisquam eveniet rem optio excepturi praesentium nemo officia ratione, quod, illum culpa, molestiae exercitationem nam provident deleniti. Vel reiciendis facere voluptates soluta necessitatibus quisquam a id quaerat veritatis! Ut asperiores fugiat incidunt sapiente dolores neque perferendis qui unde eaque dolorem, exercitationem laborum, necessitatibus nesciunt ex quas quidem vitae sit nisi commodi accusamus eum adipisci. Tenetur vitae necessitatibus sapiente aperiam repellendus temporibus! Similique laborum facere tenetur aperiam pariatur unde in?",
+    "img": "https://i.ibb.co/fvJD9gw/zhuo-cheng-you-Eet5-MP9-K67c-unsplash.jpg"
+  }
+]
