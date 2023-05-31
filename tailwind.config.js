@@ -10,6 +10,7 @@ module.exports = {
       gray2: "#666",
       darkGray: "#444444",
       lightGray: "#F2F8FA",
+      lightGray2: "#e5e7eb",
     },
   },
   plugins: [require("daisyui")],

@@ -38,10 +38,13 @@ const Navbar = () => {
               <Link to="/services">Services</Link>
             </li>
             <li>
-              <Link to="/Blog">Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/Signup">Sign up</Link>
+              <Link to="/signup">Sign up</Link>
+            </li>
+            <li>
+              <Link to="/reviews">Reviews</Link>
             </li>
           </ul>
         </div>
@@ -68,7 +71,7 @@ const Navbar = () => {
           <li>
             <Link
               className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
-              to="/Blog"
+              to="/blog"
             >
               Blog
             </Link>
@@ -76,9 +79,17 @@ const Navbar = () => {
           <li>
             <Link
               className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
-              to="/Signup"
+              to="/signup"
             >
               Sign up
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
+              to="/reviews"
+            >
+              reviews
             </Link>
           </li>
         </ul>

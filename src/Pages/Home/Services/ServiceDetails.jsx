@@ -1,19 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../../Contexts/Authprovider";
+import ReviewCard from "../../Reviews/ReviewCard";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
+
   console.log(service);
   const { _id, title, rating, img, price, description } = service;
+  console.log(_id);
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
+  const [reviews, setReviews] = useState([]);
+  console.log(reviews);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?reviewId=${_id}`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, [_id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const msg = e.target.review.value;
-    console.log(msg);
+    const rating = e.target.rating.value;
+    console.log(msg, rating);
+    const email = user.email;
+    // console.log(email);
 
     const review = {
       reviewId: _id,
       reviewMsg: msg,
+      email,
+      rating,
+      img: user.photoURL,
     };
 
     fetch("http://localhost:5000/reviews", {
@@ -26,6 +48,9 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.acknowledged) {
+          e.target.reset();
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -76,18 +101,56 @@ const ServiceDetails = () => {
       </div>
       <p className="text-xl text-orange font-semibold">Price:{price}$</p>
       <p className="text-lg text-orange font-semibold">Rating:{rating}</p>
-      <div>
-        <h3>Service reviews</h3>
-        <form onSubmit={handleSubmit}>
-          <textarea
-            name="review"
-            placeholder="review"
-            className="textarea textarea-bordered textarea-sm w-full max-w-xs"
-          ></textarea>
-          <button className="px-6 py-3 border-2 border-orange">
-            Add rewiew
-          </button>
-        </form>
+      <h3>Service reviews</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center">
+        {reviews.map((review) => (
+          <ReviewCard key={review._id} review={review} />
+        ))}
+      </div>
+      <div className="mt-20">
+        <div className="flex justify-between items-center">
+          <div>
+            <h2 className="text-5xl font-semibold text-dark">
+              Leave us a feedback!
+            </h2>
+            <p className="mt-4 text-gray2">
+              Please provide your valuable feedback{" "}
+            </p>
+            <p>{reviews.length}</p>
+          </div>
+          <div className="p-14 bg-lightGray2 rounded-md">
+            <h2 className="text-2xl font-semibold mb-3">Have a suggestion?</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="">
+                <label className="label">
+                  <span className="text-sm uppercase font-semibold text-dark">
+                    Rating
+                  </span>
+                </label>
+                <input
+                  name="rating"
+                  type="text"
+                  className="input input-md w-80"
+                />
+                <label className="label mt-2">
+                  <span className="text-sm text-dark uppercase font-semibold ">
+                    Message
+                  </span>
+                </label>
+                <textarea
+                  name="review"
+                  className="textarea w-80 h-28"
+                  required
+                ></textarea>
+              </div>
+              <div className="text-center mt-6">
+                <button className="px-6 py-3 border-2 bg-orange text-white uppercase font-bold">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

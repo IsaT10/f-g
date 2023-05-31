@@ -6,7 +6,6 @@ import Footer from "../Pages/Shared/Footer/Footer";
 export const ServicesContext = createContext();
 const Main = () => {
   const services = useLoaderData();
-  console.log(services);
   return (
     <ServicesContext.Provider value={services}>
       <Navbar />

@@ -13,7 +13,7 @@ const OurServices = () => {
   // }, []);
 
   const services = useContext(ServicesContext);
-  console.log(services);
+  // console.log(services);
   return (
     <div>
       <div className="relative">
