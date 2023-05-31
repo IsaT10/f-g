@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Contexts/Authprovider";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
   return (
     <div className="navbar bg-base-100 border-t-8 border-dark px-0 py-6 md:py-12">
-      <div className="md:navbar-start px-6 lg:px-0 w-full flex justify-between">
+      <div className="md:navbar-start px-6 lg:px-0 w-full flex justify-between items-center">
         <Link to="/" className=" text-xl md:text-3xl font-bold uppercase">
           Fast <span className="text-orange">Gear</span>
         </Link>
@@ -33,7 +46,6 @@ const Navbar = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-
             <li>
               <Link to="/services">Services</Link>
             </li>
@@ -50,7 +62,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end hidden md:flex md:mr-5 lg:mr-0">
-        <ul className="flex gap-6">
+        <ul className="flex gap-6 items-center">
           <li>
             <Link
               className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
@@ -76,23 +88,55 @@ const Navbar = () => {
               Blog
             </Link>
           </li>
-          <li>
-            <Link
-              className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
-              to="/signup"
-            >
-              Sign up
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
-              to="/reviews"
-            >
-              reviews
-            </Link>
-          </li>
+          {user?.email ? (
+            <>
+              <li>
+                <Link
+                  className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
+                  to="/reviews"
+                >
+                  My Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
+                  to="/addservice"
+                >
+                  Add service
+                </Link>
+              </li>
+              <button
+                onClick={handleLogOut}
+                className="border-2 border-orange px-4 py-2 text-orange font-semibold"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <li>
+              <Link
+                className="md:text-base lg:text-lg font-semibold hover:text-orange duration-100"
+                to="/signup"
+              >
+                Sign up
+              </Link>
+            </li>
+          )}
         </ul>
+        {user?.photoURL ? (
+          <div className="avatar">
+            <div className="w-14 rounded-full ml-4">
+              <img src={user?.photoURL} alt={user?.name} />
+            </div>
+          </div>
+        ) : (
+          <div className="avatar">
+            <div className="w-12  pl-1 rounded-full ml-4">
+              <FaRegUserCircle className="text-3xl mt-[9px]" />
+            </div>
+          </div>
+        )}
       </div>
       {/* <div className="navbar-end">
         <a className="btn">Get started</a>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ServiceCard from "./ServiceCard";
 import { ServicesContext } from "../../../Layouts/Main";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ const OurServices = () => {
   //     .then((res) => res.json())
   //     .then((data) => setServices(data));
   // }, []);
+  const [loading, setLoading] = useState(true);
 
   const services = useContext(ServicesContext);
   // console.log(services);

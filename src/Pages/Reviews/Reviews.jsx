@@ -3,7 +3,7 @@ import { AuthContext } from "../../Contexts/Authprovider";
 
 const Reviews = () => {
   const { user } = useContext(AuthContext);
-  console.log(user.email);
+  //   console.log(user.email);
   const [reviews, setReviews] = useState([]);
 
   //localhost:5000/reviews?reviewId=6475916664fc3f626d03d8f3

@@ -1,19 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/Authprovider";
 import ReviewCard from "../../Reviews/ReviewCard";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  //   console.log(from);
 
-  console.log(service);
+  //   console.log(service);
   const { _id, title, rating, img, price, description } = service;
-  console.log(_id);
+  //   console.log(_id);
   const { user } = useContext(AuthContext);
-  console.log(user);
-
+  //   console.log(user);
   const [reviews, setReviews] = useState([]);
   console.log(reviews);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?reviewId=${_id}`)
@@ -26,33 +29,40 @@ const ServiceDetails = () => {
 
     const msg = e.target.review.value;
     const rating = e.target.rating.value;
-    console.log(msg, rating);
-    const email = user.email;
+    // console.log(msg, rating);
+
     // console.log(email);
 
-    const review = {
-      reviewId: _id,
-      reviewMsg: msg,
-      email,
-      rating,
-      img: user.photoURL,
-    };
-
-    fetch("http://localhost:5000/reviews", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(review),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
-          e.target.reset();
-        }
+    if (user) {
+      const email = user.email;
+      const name = user.displayName;
+      const review = {
+        reviewId: _id,
+        reviewMsg: msg,
+        email,
+        rating,
+        name,
+        img: user.photoURL,
+      };
+      fetch("http://localhost:5000/reviews", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review),
       })
-      .catch((error) => console.log(error));
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            e.target.reset();
+          }
+        })
+        .catch((error) => console.log(error));
+    } else {
+      //   navigate(from, { replace: true });
+      navigate("/login");
+    }
   };
 
   //   useEffect(() => {
