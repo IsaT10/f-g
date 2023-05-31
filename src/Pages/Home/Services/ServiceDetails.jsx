@@ -36,13 +36,16 @@ const ServiceDetails = () => {
     if (user) {
       const email = user.email;
       const name = user.displayName;
+      const serviceName = title;
+      const serviceImg = img;
       const review = {
         reviewId: _id,
         reviewMsg: msg,
         email,
         rating,
-        name,
-        img: user.photoURL,
+        reviewerInfo: { name, img: user.photoURL },
+        serviceName,
+        serviceImg,
       };
       fetch("http://localhost:5000/reviews", {
         method: "POST",
